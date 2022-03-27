@@ -1,0 +1,12 @@
+# If you want some example snippets, check out:
+# https://github.com/atom/language-javascript/blob/master/snippets/javascript.cson
+
+'.source.tis3d':
+  'Program Block':
+    'prefix': 'prog'
+    'body': """
+    -- ${1:"Purpose"} --
+    #!BEGIN PROGRAM
+    ${1:"MOV NUL ACC"}
+    #!END PROGRAM
+    """

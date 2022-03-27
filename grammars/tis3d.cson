@@ -1,0 +1,36 @@
+# If this is your first time writing a language grammar, check out:
+#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+
+'scopeName': 'source.tis3d'
+'name': 'Tis-3D Assembly'
+'type': 'tree-sitter'
+'parser':'tree-sitter-tis-3d'
+'fileTypes': [
+  '.tis',
+  '.tis3d'
+]
+
+scopes:
+  'source_file'  : 'source.asm.tis3d'
+  'program'      : 'section'
+  'program_start': 'definition.body.begin'
+  'program_end'  : 'definition.body.end'
+  'external_text': 'comment.block.ignored'
+  'line_comment' : 'comment.line'
+  'macro' : 'other.operator'
+  'arg_literal' : 'constant.numeric'
+  'default_port' : 'constant.other.symbol'
+  'unknown_port' : 'variable.other'
+  'macro > defined' : 'meta.definition.variable'
+  'line_label' : 'syntax.control.definition'
+  'line_label > label' : 'syntax.control.bold'
+  'command > instruction' : [
+    {exact:"NOP",scopes:'keyword.mnemonic'},
+    {match:"^(JMP|JGZ|GEZ|JLZ|JNZ|JRO)$",scopes:'keyword.control.mnemonic'},
+    'keyword.operator.mnemonic']
+  'command > label' : 'syntax.control.parameter'
+
+folds: [{type:'external_text'},{type:'program',start:'program_start',end:'program_end'}]
+
+comments:
+  start: '# '
