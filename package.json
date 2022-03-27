@@ -6,7 +6,7 @@
     "language",
     "grammar"
   ],
-  "repository": "https://github.com/atom/language-tis3d",
+  "repository": "https://github.com/erfisher/language-tis3d",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
