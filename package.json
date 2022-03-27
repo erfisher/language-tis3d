@@ -1,6 +1,6 @@
 {
   "name": "language-tis3d",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Adds syntax highlighting for TIS-3D assembly files.",
   "keywords": [
     "language",
